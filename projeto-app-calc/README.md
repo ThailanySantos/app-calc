@@ -1,0 +1,1 @@
+# App Calc - Projeto de Calculadora com React.js
