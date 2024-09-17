@@ -1,54 +1,99 @@
 import React, { useState } from "react";
-import "./App.css";
+import Display from "./Componentes/Display/display";
+import ButtonPanel from "./Componentes/Button Panel/buttonPanel";
+import "../src/App.css";
 
-function Calculator() {
-  const [input, setInput] = useState("");
-  const [result, setResult] = useState("");
+const App = () => {
+  const [displayValue, setDisplayValue] = useState("0");
+  const [operator, setOperator] = useState(null);
+  const [previousValue, setPreviousValue] = useState(null);
+  const [waitingForNewValue, setWaitingForNewValue] = useState(false);
 
-  const handleClick = (value) => {
-    setInput(input + value);
+  const handleClick = (buttonName) => {
+    if (buttonName === "RESET") {
+      resetCalculator();
+    } else if (buttonName === "DEL") {
+      deleteLastDigit();
+    } else if (isOperator(buttonName)) {
+      handleOperator(buttonName);
+    } else if (buttonName === "=") {
+      performCalculation();
+    } else {
+      handleNumber(buttonName);
+    }
   };
 
-  const handleClear = () => {
-    setInput("");
-    setResult("");
+  const resetCalculator = () => {
+    setDisplayValue("0");
+    setPreviousValue(null);
+    setOperator(null);
+    setWaitingForNewValue(false);
   };
 
-  const handleEqual = () => {
-    try {
-      setResult(eval(input)); 
-      setInput(eval(input).toString()); 
-    } catch (error) {
-      setResult("Erro");
-      setInput(""); 
+  const deleteLastDigit = () => {
+    setDisplayValue(displayValue.length > 1 ? displayValue.slice(0, -1) : "0");
+  };
+
+  const isOperator = (buttonName) => {
+    return ["+", "-", "x", "/"].includes(buttonName);
+  };
+
+  const handleOperator = (operator) => {
+    if (previousValue === null) {
+      setPreviousValue(displayValue);
+    } else if (!waitingForNewValue) {
+      performCalculation();
+    }
+    setOperator(operator);
+    setWaitingForNewValue(true);
+  };
+
+  const handleNumber = (number) => {
+    if (waitingForNewValue) {
+      setDisplayValue(number);
+      setWaitingForNewValue(false);
+    } else {
+      setDisplayValue(displayValue === "0" ? number : displayValue + number);
+    }
+  };
+
+  const performCalculation = () => {
+    if (operator && previousValue !== null) {
+      const currentValue = parseFloat(displayValue);
+      const prevValue = parseFloat(previousValue);
+      let result;
+
+      switch (operator) {
+        case "+":
+          result = prevValue + currentValue;
+          break;
+        case "-":
+          result = prevValue - currentValue;
+          break;
+        case "x":
+          result = prevValue * currentValue;
+          break;
+        case "/":
+          result = prevValue / currentValue;
+          break;
+        default:
+          return;
+      }
+
+      setDisplayValue(result.toString());
+      setPreviousValue(null);
+      setOperator(null);
+      setWaitingForNewValue(false);
     }
   };
 
   return (
-    <div className="calculator">
-      <div className="display">
-        <input type="text" value={input} disabled />
-      </div>
-      <div className="buttons">
-        <button onClick={handleClear}>C</button>
-        <button onClick={() => handleClick("/")}>/</button>
-        <button onClick={() => handleClick("*")}>*</button>
-        <button onClick={() => handleClick("-")}>-</button>
-        <button onClick={() => handleClick("+")}>+</button>
-        <button onClick={() => handleClick("7")}>7</button>
-        <button onClick={() => handleClick("8")}>8</button>
-        <button onClick={() => handleClick("9")}>9</button>
-        <button onClick={() => handleClick("4")}>4</button>
-        <button onClick={() => handleClick("5")}>5</button>
-        <button onClick={() => handleClick("6")}>6</button>
-        <button onClick={() => handleClick("1")}>1</button>
-        <button onClick={() => handleClick("2")}>2</button>
-        <button onClick={() => handleClick("3")}>3</button>
-        <button onClick={() => handleClick("0")}>0</button>
-        <button onClick={handleEqual}>=</button>
-      </div>
+    <div className="app">
+      <header className="calc-header">calc</header>
+      <Display value={displayValue} />
+      <ButtonPanel clickHandler={handleClick} />
     </div>
   );
-}
+};
 
-export default Calculator;
+export default App;
