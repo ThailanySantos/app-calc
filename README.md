@@ -41,11 +41,11 @@ O **APP CALC** é uma calculadora desenvolvida em [React.js](https://reactjs.org
    ```
 3. **Execute o projeto:**
    ```bash
-   npm start
+   npm run dev
    ```
 4. **Acesse a aplicação no seu navegador:**
    ```
-   http://localhost:3000
+   http://localhost:5173
    ```
 
 ## 📂 Estrutura do Projeto
