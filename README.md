@@ -10,11 +10,10 @@
 
 O **APP CALC** é uma calculadora desenvolvida em [React.js](https://reactjs.org/) que simula as operações básicas de um dispositivo de cálculo tradicional. Este projeto foi criado com foco em melhorar as habilidades com React e estilização em [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), buscando aplicar um layout intuitivo e com design limpo e cativante. 
 
-## 🎥 Demonstração do Projeto
+## 🎥 Imagens do Projeto
 
-https://github.com/ThailanySantos/projeto-calculadora/blob/main/Gravação%20de%20Tela%202024-09-19%20163459.mp4
-
-> *Caso o vídeo não carregue, você pode [acessar a demonstração clicando aqui](https://github.com/ThailanySantos/projeto-calculadora/blob/main/Gravação%20de%20Tela%202024-09-19%20163459.mp4).*
+![image](https://github.com/user-attachments/assets/b12f5a72-6a2a-46d2-9986-45f774ef60ab)
+![image](https://github.com/user-attachments/assets/3591f5f7-7ea2-477f-85c0-8d285f2baeb2)
 
 ## 🌟 Tecnologias Utilizadas
 
