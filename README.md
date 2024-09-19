@@ -33,7 +33,7 @@ O **APP CALC** é uma calculadora desenvolvida em [React.js](https://reactjs.org
 
 1. **Clone este repositório:**
    ```bash
-   git clone https://github.com/ThailanySantos/projeto-calculadora.git
+   git clone https://github.com/ThailanySantos/app-calc
    ```
 2. **Instale as dependências:**
    ```bash
@@ -51,7 +51,7 @@ O **APP CALC** é uma calculadora desenvolvida em [React.js](https://reactjs.org
 ## 📂 Estrutura do Projeto
 
 ```
-projeto-calculadora/
+app-calc/
 ├── public/
 │   ├── index.html
 │   └── ...
