@@ -57,14 +57,13 @@ app-calc/
 │   └── ...
 ├── src/
 │   ├── components/
-│   │   ├── Button.js
-│   │   ├── Display.js
-│   │   └── Calculator.js
+│   │   ├── button.js
+│   │   ├── display.js
+│   │   └── buttonPanel.js
 │   ├── styles/
 │   │   ├── App.css
-│   │   └── Calculator.css
 │   ├── App.js
-│   ├── index.js
+│   ├── main.js
 │   └── ...
 └── README.md
 ```
