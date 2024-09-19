@@ -73,10 +73,11 @@ projeto-calculadora/
 
 Próximas etapas planejadas para o projeto:
 
+- [x] Limitação de números no display.
 - [ ] Implementar operações matemáticas mais avançadas.
 - [ ] Melhorar a acessibilidade e usabilidade do teclado.
 
-## 👩🏽‍💻 Autor
+## 👩🏽‍💻 Autora
 
 Feito com 💜 por **Thailany Santos**.
 
