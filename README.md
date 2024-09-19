@@ -81,7 +81,7 @@ Próximas etapas planejadas para o projeto:
 
 Feito com 💜 por **Thailany Santos**.
 
-- [LinkedIn](https://www.linkedin.com/in/thailanysantos)
+- [LinkedIn](https://www.linkedin.com/in/thailany-santos-828867299/)
 - [GitHub](https://github.com/ThailanySantos)
 
 ## 📝 Licença
