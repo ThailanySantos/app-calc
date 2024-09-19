@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Display from "./Componentes/Display/display";
 import ButtonPanel from "./Componentes/Button Panel/buttonPanel";
 import "../src/App.css";
@@ -8,6 +8,11 @@ const App = () => {
   const [operator, setOperator] = useState(null);
   const [previousValue, setPreviousValue] = useState(null);
   const [waitingForNewValue, setWaitingForNewValue] = useState(false);
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const handleClick = (buttonName) => {
     if (buttonName === "RESET") {
@@ -87,9 +92,24 @@ const App = () => {
     }
   };
 
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+  };
+
   return (
-    <div className="app">
-      <header className="calc-header">calc</header>
+    <div className={`app ${theme}`}>
+      <header className="calc-header">
+        <span>calc</span>
+        <div className="theme-selector">
+          <span>theme</span>
+          <div
+            className={`toggle-switch ${theme === "light" ? "light" : ""}`}
+            onClick={toggleTheme}
+          >
+            <div className={`switch ${theme === "light" ? "light" : ""}`}></div>
+          </div>
+        </div>
+      </header>
       <Display value={displayValue} />
       <ButtonPanel clickHandler={handleClick} />
     </div>

@@ -1,49 +1,97 @@
 body {
-  background-color: #394764;
   margin-top: 3%;
+  transition: background-color 0.3s;
+}
+
+body.dark {
+  background-color: #394764;
+}
+
+body.light {
+  background-color: #ededed;
 }
 
 .app {
   width: 340px;
   margin: 0 auto;
-  background-color: #394764; 
+  background-color: #394764;
   border-radius: 15px;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-weight: 500;
+  transition: background-color 0.3s;
 }
 
 .calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: left;
   font-size: 15px;
   color: #eae3db;
   margin-bottom: 10px;
   margin-left: 5px;
-  font-family: 'Arial', sans-serif;
-  font-weight: 600;
+  font-family: "Arial", sans-serif;
+  font-weight: 800;
+}
+
+.theme-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 25px;
+  background-color: #1d2b53;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-switch.light {
+  background-color: #d0cccb;
+}
+
+.switch {
+  width: 20px;
+  height: 20px;
+  background-color: #eae3db;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 5px;
+  transition: transform 0.3s;
+}
+
+.switch.light {
+  transform: translateX(25px);
+  background-color: #ca5603;
 }
 
 .button-panel {
   display: flex;
   flex-direction: column;
-  background-color: #182033; 
+  background-color: #182033;
   padding: 10px;
   border-radius: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .display {
-  background-color: #182033; 
-  color: #ffffff; 
+  background-color: #182033;
+  color: #ffffff;
   text-align: right;
   padding: 20px;
   font-size: 2.5em;
   border-radius: 10px;
   margin-bottom: 15px;
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .button-row {
@@ -53,33 +101,28 @@ body {
 }
 
 .button {
-  background-color: #eae3db; 
+  background-color: #eae3db;
   border: none;
   border-radius: 8px;
   padding: 20px;
   font-size: 1.4em;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   flex: 1;
   margin: 5px;
   box-shadow: 0 3px #a19681;
-  color: #394764; 
+  color: #394764;
 }
 
-.button.DEL {
-  background-color: #637198; 
-  color: white;
-  box-shadow: 0 3px #404b6a;
-}
-
+.button.DEL,
 .button.RESET {
-  background-color: #637198; 
+  background-color: #637198;
   color: white;
   box-shadow: 0 3px #404b6a;
 }
 
 .equals {
-  background-color: #e74c3c; 
+  background-color: #e74c3c;
   color: white;
   box-shadow: 0 3px #a53f34;
 }
@@ -89,10 +132,47 @@ body {
 }
 
 .button:active {
-  background-color: #bdc3c7; 
+  background-color: #bdc3c7;
 }
 
 button {
   outline: none;
   transition: background-color 0.3s;
+}
+
+.app.light {
+  background-color: #ededed;
+}
+
+.app.light .calc-header {
+  color: #394764;
+}
+
+.app.light .button-panel {
+  background-color: #d0cccb;
+}
+
+.app.light .display {
+  background-color: #d0cccb;
+  color: #394764;
+}
+
+.app.light .button {
+  background-color: #eae3db;
+  color: #394764;
+  box-shadow: 0 3px #a49d93;
+  font-weight: 800;
+}
+
+.app.light .button.DEL,
+.app.light .button.RESET {
+  background-color: #367f86;
+  box-shadow: 0 3px #245f63;
+  color: #fff;
+}
+
+.app.light .equals {
+  background-color: #ca5603;
+  box-shadow: 0 3px #923802;
+  color: #fff;
 }
