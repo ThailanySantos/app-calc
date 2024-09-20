@@ -83,6 +83,6 @@ Feito com 💜 por **Thailany Santos**.
 - [LinkedIn](https://www.linkedin.com/in/thailany-santos-828867299/)
 - [GitHub](https://github.com/ThailanySantos)
 
-## 📝 Licença
+## 📝 Sujestões?
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+Sujestões, opiniões e elogios são sempre bem-vindos! Sinta-se a vontade para contribuir ou para usar como inspiração.
